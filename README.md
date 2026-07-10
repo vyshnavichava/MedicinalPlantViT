@@ -47,6 +47,17 @@ MedicinalPlantViT is a Streamlit application that identifies medicinal plants fr
 - `saved_model/` — Saved model weights and tokenizer/config files
 - `Herbify-Dataset/` — Raw dataset images
 
+## Repository Layout
+```
+MedicinalPlantViT
+│
+├── assets/
+│   ├── home.png
+│   ├── upload.png
+│   ├── prediction.png
+│   └── details.png
+```
+
 ## Installation
 1. Clone the repository:
 
