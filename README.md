@@ -1,92 +1,126 @@
-# Medicinal Plant Identification
+# 🌿 MedicinalPlantViT
 
-A Streamlit app that identifies medicinal plants from leaf images using a Vision Transformer (ViT) model. The application provides a polished dashboard experience for plant recognition and medicinal information lookup.
+## Short Description
+MedicinalPlantViT is a Streamlit application that identifies medicinal plants from leaf images using a Vision Transformer (ViT) model. It provides an interactive dashboard for plant recognition, prediction details, and medicinal information.
 
-## Key Features
+## Features
 - Upload leaf images in JPG, JPEG, or PNG format
-- Predict scientific name and common name of the plant
-- Show confidence score and prediction time
-- Display top-3 predictions in a clean table
-- Provide expandable sections for:
+- Predict scientific name and common name
+- Display confidence score and prediction time
+- Show top 3 class predictions
+- Expandable sections for:
   - Medicinal uses
   - Parts used
   - Other uses
   - Cultivation details
-- Professional green-themed dashboard layout for medical/plant applications
+- Streamlit-based dashboard with responsive UI
+
+## Tech Stack
+- Python
+- Streamlit
+- PyTorch / Vision Transformer (ViT)
+- scikit-learn
+- NumPy
+- pandas
+
+## Dataset
+- Dataset directory: `Herbify-Dataset/`
+- Contains medicinal plant leaf images organized by species
+- Used to train and validate the ViT classification model
+
+## Model Architecture
+- Vision Transformer (ViT) based image classification
+- Trained on medicinal plant leaf images
+- Predicts plant species and provides confidence values
 
 ## Project Structure
-- `app.py`: Main Streamlit application and UI layout
-- `model.py`: Model loading and inference utilities
-- `dataset.py`: Dataset loading and preprocessing helpers
-- `train.py`: Training script for the ViT model
-- `evaluate.py`: Evaluation and validation script
-- `predict.py`: Prediction utilities
-- `saved_model/`: Pretrained/fine-tuned model files
-- `Herbify-Dataset/`: Original plant image dataset
+- `app.py` — Main Streamlit application and UI
+- `config.py` — Configuration and constants
+- `dataset.py` — Dataset loading and preprocessing utilities
+- `model.py` — Model loading and inference functions
+- `train.py` — Training script for model fine-tuning
+- `evaluate.py` — Model evaluation and validation logic
+- `predict.py` — Prediction helper functions
+- `save_label_encoder.py` — Encoder saving utilities
+- `requirements.txt` — Python project dependencies
+- `README.md` — Project overview and usage instructions
+- `saved_model/` — Saved model weights and tokenizer/config files
+- `Herbify-Dataset/` — Raw dataset images
+
+## Repository Layout
+```
+MedicinalPlantViT
+│
+├── assets/
+│   ├── home.png
+│   ├── upload.png
+│   ├── prediction.png
+│   └── details.png
+```
 
 ## Installation
-1. Clone the repository to your local machine.
-2. Install dependencies:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/vyshnavichava/MedicinalPlantViT.git
+cd MedicinalPlantViT
+```
+
+2. Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+3. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Ensure the important files and directories are present:
-- `app.py`
-- `saved_model/`
-- `Copy of final_herbify_dataset.xlsx`
-- `requirements.txt`
-
-## Usage
-Run the app locally:
+## How to Run
+Start the Streamlit app locally:
 
 ```bash
 streamlit run app.py
 ```
 
-Then open the local Streamlit URL shown in the terminal (usually `http://localhost:8501`).
+Open the URL shown in the terminal, usually `http://localhost:8501`.
 
-## App Output
-After uploading an image, the app displays:
-- A centered image preview with responsive sizing and rounded corners
-- A Prediction Details card with:
-  - Scientific Name
-  - Common Name
-  - Confidence
-  - Prediction Time
-  - Model
-  - Confidence Level
-- A Top 3 Predictions table aligned with the prediction section
-- Expandable content blocks for medicinal uses, parts used, other uses, and cultivation details
+## Screenshots
+Add your app screenshots here if available:
 
-### Screenshots
-Add your app output screenshots here if available:
+![Home screen](assets/home.png)
 
-![App Output 1](outputs/output1.png)
+![Upload screen](assets/upload.png)
 
-![App Output 2](outputs/output2.png)
+![Prediction screen](assets/prediction.png)
 
-![App Output 3](outputs/output3.png)
+![Details screen](assets/details.png)
 
-![App Output 4](outputs/output4.png)
+## Results
+- Model type: Vision Transformer (ViT)
+- Dataset: Medicinal plant leaf images
+- Example accuracy: 97.03% (reported during evaluation)
+- Provides predictive labels with confidence scores and supplemental plant details
 
-## Model Information
-- Model: Vision Transformer (ViT)
-- Dataset: 6,057 images covering 89 medicinal plant species
-- Displayed accuracy: 97.03%
+## Future Work
+- Add support for more plant species and more training data
+- Improve model accuracy with advanced fine-tuning
+- Add image augmentation and preprocessing pipelines
+- Deploy the app to a hosted platform like Streamlit Cloud or Heroku
+- Add better documentation and user guidance in the UI
 
-## Deployment
-To deploy on Streamlit Community Cloud:
-1. Push the repository to GitHub.
-2. Go to https://share.streamlit.io/cloud-getting-started.
-3. Create a new app and select:
-   - Repository
-   - Branch: `main`
-   - File path: `app.py`
-4. Deploy and open the published app link.
+## Author
+- Developed by Vyshnavichava
+- GitHub: https://github.com/vyshnavichava
 
-## Notes
-- Keep `requirements.txt` up to date.
-- If the model files are large, consider a deployment strategy that supports large data or Git LFS.
-- If using a private repo, make sure Streamlit Cloud has access.
+## Changelog (recent)
+- Added Vision Transformer inference pipeline
+- Improved prediction UI
+- Integrated medicinal plant database
+- Added confidence visualization
+- Fixed image preprocessing
+- Updated README
+- Added deployment instructions
