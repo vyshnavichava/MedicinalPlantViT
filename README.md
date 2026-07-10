@@ -80,9 +80,13 @@ Open the URL shown in the terminal, usually `http://localhost:8501`.
 ## Screenshots
 Add your app screenshots here if available:
 
-![App Output 1](outputs/output1.png)
+![Home screen](assets/home.png)
 
-![App Output 2](outputs/output2.png)
+![Upload screen](assets/upload.png)
+
+![Prediction screen](assets/prediction.png)
+
+![Details screen](assets/details.png)
 
 ## Results
 - Model type: Vision Transformer (ViT)
