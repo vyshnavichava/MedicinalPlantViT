@@ -115,3 +115,12 @@ Add your app screenshots here if available:
 ## Author
 - Developed by Vyshnavichava
 - GitHub: https://github.com/vyshnavichava
+
+## Changelog (recent)
+- Added Vision Transformer inference pipeline
+- Improved prediction UI
+- Integrated medicinal plant database
+- Added confidence visualization
+- Fixed image preprocessing
+- Updated README
+- Added deployment instructions
